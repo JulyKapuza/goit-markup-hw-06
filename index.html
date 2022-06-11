@@ -359,28 +359,45 @@
             </button>
             <form class="modal-form">
                 <h3 class="modal-title">Оставьте свои данные, мы вам перезвоним</h3>
-                <div class="form-field">
-                     <label class="form-label" for="name">Имя</label>
-                <input class="form-input" type="text" name="name" id="name">
-                <svg class="icon-personal">
-                    <use href="./image/sprite.svg#person-black"></use>
-                </svg>
-                </div>
-                <div class="form-field">
-                    <label class="form-label" for="tel">Телефон</label>
-                    <input class="form-input" type="tel" name="tel" id="tel">
-                </div>
-                <div class="form-field">
-                    <label class="form-label" for="user-mail">Почта</label>
-                    <input class="form-input" type="email" name="mail" id="user-mail">
-                </div>
+                <label class="form-field" >
+                    <span class="form-info">Имя</span> 
+                    <input class="form-input" type="text" name="name">
+                    <svg class="form-icon">
+                        <use href="./image/sprite.svg#person-black"></use>
+                    </svg>
+
+                </label>
                 
-                <div class="form-field">
-                    <label class="form-label" for="comment">Комментарий</label>
-                    <textarea class="form-comment" name="comment" id="comment" rows="6" placeholder="Введите текст"></textarea>
-                </div>
+                <label class="form-field" >
+                    <span class="form-info">Телефон</span> 
+                    <input class="form-input" type="tel" name="tel">
+                    <svg class="form-icon">
+                        <use href="./image/sprite.svg#phone-black"></use>
+                    </svg>
+                </label>
+
+                <label class="form-field" >
+                    <span class="form-info">Почта</span> 
+                    <input class="form-input" type="email" name="mail">
+                    <svg class="form-icon">
+                        <use href="./image/sprite.svg#email-black"></use>
+                    </svg>
+
+                </label>
+
+                <label class="form-field" >
+                    <span class="form-info">Комментарий</span>
+                    <textarea class="form-comment form-input" name="comment"  rows="6" placeholder="Введите текст"></textarea>
+                </label>
+
+                <label class="form-label">
+                    <input class="checkbox" type="checkbox" name="agreement" value="Соглашаюсь с рассылкой и принимаю Условия договора">
+                    <span class="checkbox-icon"></span>
+                    <span >Соглашаюсь с рассылкой и принимаю <span class="term">Условия договора</span></span>
+                </label>
+                
                 <div class="form-btn">
-                <button class="button primary " type="submit">Отправить</button>
+                <button class="button primary" type="submit">Отправить</button>
                 </div>
             </form>
         </div>

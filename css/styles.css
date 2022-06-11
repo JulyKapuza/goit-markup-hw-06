@@ -184,6 +184,7 @@ address {
 
 .contacts .contact-list {
     display: flex;
+    align-items: center;
 
     color: var(--primary-text-color);
     font-weight: var(--fw-header-500);
@@ -604,6 +605,9 @@ address {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
     background-color: var(--dark-bgc);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    line-height: 1.25;
 }
 
 .footer-input::placeholder{
@@ -802,12 +806,23 @@ address {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     cursor: pointer;
+
+    transition: color 250ms var(--timing);
 }
+
 
 .btn-close{
     width: 18px;
     height: 18px;
+    fill: currentColor;
 }
+
+.modal-btn:focus,
+.modal-btn:hover{
+    color: var(--accent-color);
+
+}
+
 
 .modal-form{
     width: 448px;   
@@ -829,8 +844,10 @@ address {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    position: relative;
+    color: var(--title-text-color);
 }
-.form-label{
+.form-info{
     margin-bottom: 4px;
     font-size: 12px;
     line-height: 1.17;
@@ -843,10 +860,37 @@ address {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
 
-    padding: 11px 12px;
+    padding: 11px 42px;  
+    cursor: pointer; 
 
-    position: relative;
+    transition: border-color 250ms var(--timing);
 }
+
+/* Іконки в полях форми */
+.form-icon {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    
+    fill: currentColor;
+
+    transition: color 250ms var(--timing);
+}
+
+
+.form-field:focus-within .form-icon {
+    color: var(--accent-color);  
+}
+
+
+.form-input:focus{
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+
 .form-comment{
     resize:none;
     padding: 12px 16px;
@@ -859,17 +903,63 @@ address {
     letter-spacing: 0.01em;
     
     color: rgba(117, 117, 117, 0.5);
-
 }
 
 .form-btn{
     text-align: center;
 }
 
-/* Іконки в полях форми */
-.icon-personal{
-    width: 18px;
-    height: 18px;
-    position:absolute;
+.form-btn .button{
+    transition: box-shadow 250ms var(--timing);
+}
+
+.form-btn .button:hover,
+.form-btn .button:focus{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);   
+}
+
+.checkbox{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
     
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.form-label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: var(--card-gap);
+    
+}
+.checkbox-icon{
+    
+    display: inline-block;
+    height: 15px;
+    width: 16px;
+    margin-right: 7px;
+    border: 2px solid #212121;
+    border-radius: 2px;
+}
+
+.checkbox:checked + .checkbox-icon{
+    border-color: var(--accent-color);
+    background-color: var(--accent-color);
+    background-image: url(../image/check.svg);
+    background-size: contain;
+    
+    
+}
+
+.term{
+    text-decoration-line: underline;
+    color: var(--accent-color);
 }
