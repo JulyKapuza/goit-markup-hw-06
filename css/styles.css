@@ -538,6 +538,7 @@ address {
 .flex-footer {
     display: flex;
     align-items: baseline;
+    justify-content: space-between;
 }
 
 .logo-footer {
@@ -578,10 +579,6 @@ address {
     color: var(--accent-color);
 }
 
-.social-networks{
-    margin-left: 70px; 
-    margin-right: 93px; 
-}
 
 .footer-form{
     display: flex;
@@ -608,6 +605,9 @@ address {
     color: rgba(255, 255, 255, 0.6);
     font-size: 16px;
     line-height: 1.25;
+
+    transition: border 250ms var(--timing);
+
 }
 
 .footer-input::placeholder{
@@ -616,6 +616,13 @@ address {
     font-size: 16px;
     line-height: 1.25;
     letter-spacing: 0.03em;
+}
+
+.footer-form:focus-within .footer-input,
+.footer-form:hover .footer-input {
+    border: 1px solid var(--white-color);
+    outline: none;
+
 }
 
 .footer-btn{
@@ -826,7 +833,12 @@ address {
 
 .modal-form{
     width: 448px;   
+}
 
+.modal-form>.button{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .modal-title{
@@ -846,7 +858,18 @@ address {
     margin-bottom: 10px;
     position: relative;
     color: var(--title-text-color);
+
+    transition: border-color 250ms var(--timing)
+
+
 }
+
+
+.form-field:nth-child(5){
+    margin-bottom: 20px;
+}
+
+
 .form-info{
     margin-bottom: 4px;
     font-size: 12px;
@@ -880,12 +903,14 @@ address {
 }
 
 
-.form-field:focus-within .form-icon {
+.form-field:focus-within .form-icon,
+.form-field:hover .form-icon {
     color: var(--accent-color);  
 }
 
 
-.form-input:focus{
+.form-field:focus-within .form-input,
+.form-field:hover .form-input{
     outline: none;
     border-color: var(--accent-color);
 }
@@ -897,6 +922,7 @@ address {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
 }
+
 .form-comment::placeholder{
     font-size: 12px;
     line-height: 14px;
@@ -936,7 +962,6 @@ address {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
     margin-bottom: var(--card-gap);
     
 }
@@ -948,7 +973,15 @@ address {
     margin-right: 7px;
     border: 2px solid #212121;
     border-radius: 2px;
+
+    transition: border 250ms var(--timing);
 }
+
+.form-label:focus-within .checkbox-icon,
+.form-label:hover .checkbox-icon{
+    border: 2px solid var(--accent-color);
+}
+
 
 .checkbox:checked + .checkbox-icon{
     border-color: var(--accent-color);
